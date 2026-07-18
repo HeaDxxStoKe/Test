@@ -1,21 +1,27 @@
-# Xcode
-build/
-DerivedData/
-*.xcodeproj/xcuserdata/
-*.xcworkspace/xcuserdata/
-*.xcuserstate
-*.xcscmblueprint
+# Dependencies
+/node_modules
 
-# Von XcodeGen generiert (aus project.yml reproduzierbar)
-TrainingsApp.xcodeproj/
+# Next.js
+/.next/
+/out/
+next-env.d.ts
 
-# macOS
+# Production build
+/build
+
+# Environment / secrets
+.env
+.env.local
+.env*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor / OS
 .DS_Store
+.vscode/
+.idea/
 
-# Swift Package Manager
-.build/
-.swiftpm/
-
-# CocoaPods / Carthage (falls später genutzt)
-Pods/
-Carthage/Build/
+# TypeScript
+*.tsbuildinfo

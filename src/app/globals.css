@@ -1,0 +1,241 @@
+:root {
+  --accent: #fc4c02; /* Strava-Orange */
+  --accent-strong: #e34402;
+  --bg: #f7f7f8;
+  --surface: #ffffff;
+  --surface-2: #f0f1f3;
+  --border: #e3e4e8;
+  --text: #1a1a1f;
+  --text-muted: #6b6f76;
+  --radius: 14px;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1012;
+    --surface: #17181c;
+    --surface-2: #1f2126;
+    --border: #2a2c32;
+    --text: #f2f3f5;
+    --text-muted: #9aa0a8;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 20px 64px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 22px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s ease, transform 0.05s ease;
+}
+.btn:active {
+  transform: translateY(1px);
+}
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: var(--accent-strong);
+}
+.btn-ghost {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+/* Cards */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+.stat {
+  padding: 16px;
+}
+.stat-value {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.stat-label {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Header */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+.app-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+}
+.athlete {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--surface-2);
+}
+
+/* Activity list */
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 28px 0 12px;
+}
+.activity {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.activity:last-child {
+  border-bottom: none;
+}
+.activity-icon {
+  font-size: 22px;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  background: var(--surface-2);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.activity-main {
+  min-width: 0;
+  flex: 1;
+}
+.activity-name {
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.activity-meta {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.activity-stats {
+  text-align: right;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.activity-stats strong {
+  font-weight: 700;
+}
+
+/* Chart */
+.chart-wrap {
+  padding: 18px;
+  overflow-x: auto;
+}
+.chart-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+.chart-sub {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0 0 14px;
+}
+
+/* Landing */
+.landing {
+  max-width: 520px;
+  margin: 8vh auto 0;
+  text-align: center;
+  padding: 0 20px;
+}
+.landing h1 {
+  font-size: 34px;
+  margin: 20px 0 8px;
+  letter-spacing: -0.02em;
+}
+.landing p {
+  color: var(--text-muted);
+  font-size: 16px;
+  margin: 0 0 28px;
+}
+.hero-icon {
+  font-size: 56px;
+}
+.error-banner {
+  background: rgba(252, 76, 2, 0.1);
+  border: 1px solid rgba(252, 76, 2, 0.3);
+  color: var(--accent-strong);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.muted {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+.center {
+  text-align: center;
+  padding: 40px 0;
+}
